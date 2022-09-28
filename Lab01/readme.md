@@ -362,6 +362,15 @@ Para lhe aceder basta ir ao endereço [localhost:9000](localhost:9000).
     - **POrque é importante configurar os volumes para uma base de dados de produção, porque se trata de um serviço crítico para a aplicação.** 
     
 
+## Extra comandos utilizados a resolver o exercício
+
+```bash
+$ mvm clean install #projeto maven ipmaClient
+
+$ mvn package exec:java -Dexec.mainClass=pt.ua.ies103823.WeatherForecastByCity.WeatherStarter -Dexec.args=Lisboa #projeto maven WeatherForecastByCity
+
+```
+
 # Referencias
 * https://books.sonatype.com/mvnex-book/reference/index.html
 
