@@ -322,6 +322,45 @@ Para lhe aceder basta ir ao endereço [localhost:9000](localhost:9000).
 
 ## Review questions
 
+1. <b> Maven has three lifecycles: clean, site and default. Explain the main phases in the default lifecycle. </b>
+
+    - **validate**: validdar a configuração do projeto;
+    - **compile**: compile o código fonte do projeto;
+    - **test**: teste o código compilado, usando um framework de teste unitário; Esses testes não devem depender de outros projetos;
+    - **package**: pegue o código compilado e empacote-o em um formato de distribuição, como um JAR;
+    - **verify**: execute quaisquer verificações para garantir que o pacote está correto e está pronto para ser publicado;
+    - **install**: instale o pacote no repositório local, para que outros projetos possam referenciá-lo localmente;
+    - **deploy**: distribua o pacote finalmente em um repositório remoto, para que outros desenvolvedores e equipes possam usá-lo em seu projeto.
+  
+2. <b> Maven is a build tool; is it appropriate to run your project to? </b>
+   
+    - **SIM**, porque se trata de  uma *build tool* que permite gerir dependências, executar testes, gerar *javadoc*, etc. E permite a criação de *builds* de forma automatizada.   
+
+3. <b> What wouldbe a likely sequence of Git commands required to contribute with a new feature to a given project? (i.e., get a fresh copy, develop some increment, post back the added functionality) </b>
+
+    - **git clone**: obter uma cópia do repositório remoto
+    - **git checkout -b <branch_name>**: criar uma nova *branch* e mudar para essa *branch*
+    - **git add <file>**: adicionar um ficheiro à *staging area*
+    - **git commit -m "message"**: commit das alterações para a *branch* local
+    - **git push origin <branch_name>**: push das alterações para a *branch* remota
+    - **git checkout master**: mudar para a *branch* master
+    - **git pull origin master**: pull das alterações da *branch* remota para a *branch* local
+    - **git merge <branch_name>**: merge da *branch* local com a *branch* master
+    - **git push origin master**: push das alterações para a *branch* remota
+
+4. <b>There are strong opinions on how to write Git commitmessages... Find some best practices online and give your own informed recommendationson how to write good commit messages(in a teamproject).</b>
+
+    - **Write in the imperative**: "Fix bug" e não "Fixed bug" ou "Fixes bug".
+    - **Don't end the subject line with a period**: "Avoid trivial grammar mistakes."
+    - **Capitalize the subject line**: "Add a new feature" e não "add a new feature."
+    - **Use the body to explain what and why vs. how**: "The code is self-explanatory."
+    - **Keep the subject line short and separate subject from body with a blank line**: "Add a new feature. The feature is self-explanatory."
+    - **Wrap the body at 72 characters**: "This is a very long commit message that would be difficult to read in its entirety without line wrapping."
+
+5. <b> Docker automatically prepares the required volume space as you start a container. Why is it important that you take an extra step configuring the volumes for a (production) database? </b>
+
+    - **POrque é importante configurar os volumes para uma base de dados de produção, porque se trata de um serviço crítico para a aplicação.** 
+    
 
 # Referencias
 * https://books.sonatype.com/mvnex-book/reference/index.html
