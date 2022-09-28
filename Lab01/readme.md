@@ -120,9 +120,74 @@ O Maven tem os três ciclos de vida padrão a seguir:
 
 **Site** - O ciclo de vida site é responsável por gerar o site do projeto. O ciclo de vida site é executado quando nenhum ciclo de vida é especificado.
 
-## GIT
+## <b> GIT </b>
+Para entregar ou partilhar um projeto com alguém, é desnecessário enviar o código compilado. Para isso, é necessário utilizar um sistema de controlo de versões, como o [GIT](https://git-scm.com/).
+
+O GIT é um sistema de controlo de versões distribuído, que permite a partilha de código entre várias pessoas, sem a necessidade de um servidor central. Para além disso, permite a criação de branches, que são cópias do projeto, que podem ser utilizadas para testar novas funcionalidades, sem afetar o projeto principal.
+
+Em primeiro lugar, é necessário criar um repositório local, para o qual o projeto será enviado. Para isso, basta executar o seguinte comando no terminal.
+
+```bash
+$ git init
+```
+
+Para adicionar um ou varios ficheiros ao repositório, basta executar um dos seguintes comandos no terminal.
+
+```bash
+$ git add <file> # Adiciona um ficheiro
+$ git add . # Adiciona todos os ficheiros
+```
+
+Para enviar os ficheiros para o repositório, basta executar o seguinte comando no terminal.
+
+```bash 
+$ git commit -m "Mensagem"
+```
+
+Para enviar os ficheiros para um repositório remoto, basta executar o seguinte comando no terminal.
+
+```bash
+$ git remote add origin <url> # Adiciona um repositório remoto
+$ git push -u origin master # Envia os ficheiros para o repositório remoto
+```
+
+Para receber os ficheiros de um repositório remoto, basta executar o seguinte comando no terminal.
+
+```bash
+$ git pull origin master # Recebe os ficheiros do repositório remoto
+```
+
+Para criar um novo branch, basta executar o seguinte comando no terminal.
+
+```bash
+$ git branch <branch> # Cria um novo branch
+$ git checkout <branch> # Muda para o novo branch
+```
+
+Para juntar um branch a outro, basta executar o seguinte comando no terminal.
+
+```bash
+$ git checkout <branch> # Muda para o branch que vai receber os ficheiros
+$ git merge <branch> # Junta o branch com o branch atual
+```
+
+Para apagar um branch, basta executar o seguinte comando no terminal.
+
+```bash
+$ git branch -d <branch> # Apaga um branch
+```
+
+Nestes links podem encontrar mais informação sobre o GIT.
+
+[Ver mais](https://git-scm.com/docs)
+
+[Ajuda Rápida](https://gist.github.com/leocomelli/2545add34e4fec21ec16)
+
+O git permite que ficheiros sejam ignorados, para que não sejam enviados para o repositório. Para isso, basta criar um ficheiro chamado **.gitignore** e adicionar os nomes dos ficheiros que não querem ser enviados para o repositório.
+
 
 ## <b> Docker </b>
+
 
 ## Review questions
 
