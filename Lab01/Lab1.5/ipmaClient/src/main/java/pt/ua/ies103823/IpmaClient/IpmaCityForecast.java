@@ -1,4 +1,4 @@
-package pt.ua.deti;
+package pt.ua.ies103823.IpmaClient;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

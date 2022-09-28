@@ -1,9 +1,6 @@
 package pt.ua.ies103823.WeatherForecastByCity;
 
-import retrofit2.Call;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import pt.ua.ies103823.IpmaClient.*;
 
 /**
  * demonstrates the use of the IPMA API for weather forecast
@@ -14,31 +11,33 @@ public class WeatherStarter {
     private static final int CITY_ID_AVEIRO = 1010500;
 
     public static void  main(String[] args ) {
-        int City_ID = -1;
+        String City = null;
         if (args.length != 1){
             System.out.println("No city id provided, using Aveiro as default");
-            City_ID = CITY_ID_AVEIRO;
+            City = "Aveiro";
         } else{
-            System.out.println("ID da Cidade: " + args[0]);
-            City_ID = Integer.parseInt(args[0]);
+            System.out.println("Cidade: " + args[0]);
+            City = args[0];
         }
 
-        // get a retrofit instance, loaded with the GSon lib to convert JSON into objects
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://api.ipma.pt/open-data/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        IpmaApiLogic ipma = new IpmaApiLogic();
 
-        // create a typed interface to use the remote API (a client)
-        IpmaService service = retrofit.create(IpmaService.class);
-        // prepare the call to remote endpoint
-        Call<IpmaCityForecast> callSync = service.getForecastForACity(City_ID);
+        IpmaCity cidades = ipma.getCity();
+        int City_id = -1;
+        for (int i = 0; i < cidades.getData().size(); i++) {
+            if (cidades.getData().get(i).getLocal().equals(City)){
+                System.out.println("Cidade: " + cidades.getData().get(i).getLocal());
+                City_id = cidades.getData().get(i).getGlobalIdLocal();
+            }
+        }
+        if(City_id == -1){
+            System.err.println("Cidade não encontrada");
+            System.exit(1);
+        }
 
-        try {
-            Response<IpmaCityForecast> apiResponse = callSync.execute();
-            IpmaCityForecast forecast = apiResponse.body();
+        IpmaCityForecast forecast = ipma.getWeatherForecastByCity(City_id);
 
-            if (forecast != null) {
+        if (forecast != null) {
                 //colocar para diferentes datas
                 System.out.println("Na cidade com ID " + forecast.getGlobalIdLocal() + " no país " + forecast.getCountry()+ ".");
 
@@ -60,9 +59,5 @@ public class WeatherStarter {
             } else {
                 System.out.println( "No results for this request!");
             }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
     }
 }
