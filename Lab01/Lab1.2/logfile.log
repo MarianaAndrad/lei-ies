@@ -1,0 +1,3 @@
+2022-09-29 09:53:40.560 [main] DEBUG pt.ua.deti.WeatherStarter - Debug log message
+2022-09-29 09:53:40.562 [main] INFO  pt.ua.deti.WeatherStarter - Info log message
+2022-09-29 09:53:40.562 [main] ERROR pt.ua.deti.WeatherStarter - Error log message

@@ -1,0 +1,3 @@
+2022-09-29 09:43:20.875 [main] DEBUG pt.ua.ies103823.IpmaClient.IpmaApiLogic - Debug log message
+2022-09-29 09:43:20.877 [main] INFO  pt.ua.ies103823.IpmaClient.IpmaApiLogic - Info log message
+2022-09-29 09:43:20.877 [main] ERROR pt.ua.ies103823.IpmaClient.IpmaApiLogic - Error log message
