@@ -359,7 +359,7 @@ Para lhe aceder basta ir ao endereço [localhost:9000](localhost:9000).
 
 5. <b> Docker automatically prepares the required volume space as you start a container. Why is it important that you take an extra step configuring the volumes for a (production) database? </b>
 
-    - **POrque é importante configurar os volumes para uma base de dados de produção, porque se trata de um serviço crítico para a aplicação.** 
+    - **Porque é importante configurar os volumes para uma base de dados de produção, porque se trata de um serviço crítico para a aplicação.** 
     
 
 ## Extra comandos utilizados a resolver o exercício
