@@ -1,3 +1,18 @@
+# <b> Lab02 - ----t </b>
+
+author: <b> Mariana Andrade </b>
+
+date: <b> --/10/2022 </b>
+
+##  <b>Servlets </b>
+Um [**Servlet**](https://javaee.github.io/javaee-spec/javadocs/javax/servlet/Servlet.html) é um programa Java que roda dentro de um servidor web. Servlet é um componente Java que pode ser usado para estender a funcionalidade de um servidor web que suporta o protocolo HTTP. Os servlets podem responder a uma requisição HTTP de um navegador ou outro cliente HTTP. Este pode gerar qualquer conteúdo dinâmico, como um documento HTML, XML ou uma imagem. 
+Pode  ainda ser usado para coletar dados do formulário HTML, processá-los e gerar um documento HTML dinâmico como resposta.
+
+Uma vez que se insere no mundo da *web* é fundamental que seja executado num ambiente que permite a concorrência, pelo que deve ser executado num [Servlet Container](https://javaee.github.io/servlet-spec/).
+
+> Quando recebe um pedido do cliente, o servidor entrega o pedido ao Servlet Container, que por sua vez o passa à classe (que implementa o) Servlet. 
+
+
 #### <b> Apache Tomcat </b>
 
 Para correr, vamos utilizar o servidor de aplicações **Apache Tomcat**.
@@ -64,3 +79,10 @@ Deve ser gerado um ficheiro .war na pasta /target.
 > **Web ARchive** (.war) é um arquivo JAR usado para distribuir uma coleção de páginas Servlets.
 
 Este ficheiro é utilizado para fazer *deploy* no Tomcat, em http://localhost:8080/manager/, na secção <u>WAR file to deploy</u>.
+
+
+### Ambiente de desenvolvimento integrado com o IDE
+
+[IntelliJ](https://mkyong.com/intellij/intellij-idea-run-debug-web-application-on-tomcat/)
+
+### Criar uma página web
