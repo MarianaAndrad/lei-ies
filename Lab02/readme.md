@@ -3,7 +3,7 @@
 
 author: <b> Mariana Andrade </b>
 
-date: <b> --/10/2022 </b>
+date: <b> 13/10/2022 </b>
 
 </br>
 
@@ -94,7 +94,7 @@ Este ficheiro é utilizado para fazer *deploy* no Tomcat, em http://localhost:80
 
 ### Criar uma página web
 
-> [Tutorial](https://howtodoinjava.com/java/servlets/complete-java-servlets-tutorial/#webservlet_annotation)
+> Notas retiradas das secçoẽs: **Develop Servlet with @WebServelet Annotation** até **Handling Servelet and Response** [Tutorial](https://howtodoinjava.com/java/servlets/complete-java-servlets-tutorial/#webservlet_annotation)
 
 
 Para criar páginas web, é necessário criar uma classe que implemente a interface `javax.servlet.Servlet`, que faz *override* do método `service()`, que recebe como parâmetro um objeto `javax.servlet.ServletRequest` e um objeto `javax.servlet.ServletResponse`.
@@ -107,17 +107,48 @@ Para criar páginas web, é necessário criar uma classe que implemente a interf
 
 Para associar a classe a um URL, utiliza-se a anotação [@WebServlet](https://docs.oracle.com/javaee/6/api/javax/servlet/annotation/WebServlet.html).
 
-> exemplo: `@WebServlet("/hello")`
->```java
->@WebServlet("/hello")
->public class HelloServlet extends HttpServlet {
->    @Override
->    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
->        resp.getWriter().write("Hello World!");
->    }
->}
->```
-
-Dentro de cada método pode ser realizado todo o tipo de processamento.
 
 <br>
+
+```java
+import java.io.IOException;
+ 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+ 
+@WebServlet(name = "MyFirstServlet", urlPatterns = {"/MyFirstServlet"})
+public class MyFirstServlet extends HttpServlet {
+ 
+    private static final long serialVersionUID = -1915463532411657451L;
+ 
+    @Override
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response) throws ServletException, IOException 
+    {
+        //Do some work
+        
+    }
+}
+```
+Dentro de cada método pode ser realizado todo o tipo de processamento.<br>
+
+#### Resposta HTML
+A resposta ao pedido 
+
+
+#### Pedido de argumentos
+
+# Review questions
+
+1. What are the responsibilities/services of a servlet container?
+
+2. Explain, in brief, the "dynamics" of Model-View-Controller approach used in Spring Boot to serve web content.(You may exemplify with a context of the previous exercises)
+
+3. Inspect the POM.xml for the previous SpringBoot projects. What is the role of the “starters” dependencies?
+
+4. Which annotations are transitively included in the @SpringBootApplication?
+
+5. Search online for the topic “Best practices for REST APIdesign”. From what you could learn, select your “top 5”practices,and briefly explain them in you own words.
