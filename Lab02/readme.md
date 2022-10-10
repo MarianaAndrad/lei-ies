@@ -136,10 +136,35 @@ public class MyFirstServlet extends HttpServlet {
 Dentro de cada método pode ser realizado todo o tipo de processamento.<br>
 
 #### Resposta HTML
-A resposta ao pedido 
+A resposta pode ser um ficheiro HTML, que é enviado para o cliente, devendo neste caso ser defenido como o tipo de resposta e a pagina ser construida com recurso à classe `PrintWriter`.[!]https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/io/PrintWriter.html
 
+```java
+import java.io.PrintWriter;
+
+//...
+response.setContentType("text/html");
+PrintWriter out = response.getWriter();
+try {
+    out.println("<html>");
+    out.println("<head>");
+    out.println("<title>My First Servlet</title>");
+    out.println("</head>");
+    out.println("<body>");
+    out.println("<h1>My First Servlet</h1>");
+    out.println("</body>");
+    out.println("</html>");
+} finally {
+    out.close();
+}
+```
+<br>
 
 #### Pedido de argumentos
+Para obter paramtros dos pedidos, utiliza-se o método `getParameter()` da classe `HttpServletRequest`, que retorne uma `String` com o valor do argumento pedido, ou null caso não exista.
+
+```java
+String name = request.getParameter("name");
+```
 
 # Review questions
 
