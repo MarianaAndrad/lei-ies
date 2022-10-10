@@ -166,6 +166,50 @@ Para obter paramtros dos pedidos, utiliza-se o método `getParameter()` da class
 String name = request.getParameter("name");
 ```
 
+<br>
+
+#### Server-side programming with embedded servers
+
+Em alternativa ao *deploy* num *container*, pode ser utilizado um servidor *embedded* para testar a aplicação,como o [Jetty](https://www.eclipse.org/jetty/documentation/current/embedding-jetty.html). Assim, todo o *life-cycle* da aplicação é gerido pelo servidor, que é executado no próprio programa.
+
+**Jetty server** é um dos servidores mais utilizados para desenvolvimento de aplicações web. É um servidor *embedded* que pode ser utilizado para testar aplicações web sem a necessidade de *deploy* num *container*.
+
+> Utilização [aqui](https://examples.javacodegeeks.com/enterprise-java/jetty/embedded-jetty-server-example/) (3.5.)
+
+<br>
+Deve ser adicionada a dependência ao ficheiro `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>org.eclipse.jetty</groupId>
+    <artifactId>jetty-server</artifactId>
+    <version>9.2.15.v20160210</version>
+</dependency>
+<dependency>
+    <groupId>org.eclipse.jetty</groupId>
+    <artifactId>jetty-servlet</artifactId>
+    <version>9.2.15.v20160210</version>
+</dependency>
+```
+Para correr a aplicação na linha de comandos, deve ainda ser adicionado um *plugin*.
+
+```xml
+<plugin>
+  <groupId>org.eclipse.jetty</groupId>
+  <artifactId>jetty-maven-plugin</artifactId>
+  <version>9.3.13.v20161014</version>
+</plugin>
+```
+
+Para correr a aplicação pelo terminal, deve ser executado o comando `mvn jetty:run`.
+
+<br>
+
+## Spring Boot
+
+
+
+
 # Review questions
 
 1. What are the responsibilities/services of a servlet container?
