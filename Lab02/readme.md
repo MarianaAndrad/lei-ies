@@ -205,10 +205,40 @@ Para correr a aplicação pelo terminal, deve ser executado o comando `mvn jetty
 
 <br>
 
-## Spring Boot
+## <b>Spring Boot </b>
+String Boot é uma plataforma de desenvolvimento rápido e simples de aplicações *web*, construida sobre o [Spring](https://spring.io/) Framework. É uma ferramenta que permite criar aplicações web com poucas linhas de código, sem a necessidade de configuração de ficheiros XML.
 
+<br>
 
+### Criar projeto maven com Spring 
 
+Gerar o projeto maven com Spring Boot, utilizando o [Spring Initializr](https://start.spring.io/).<br>
+Deve ser adicionada a dependência `Spring Web` para criar uma aplicação web. <br>
+
+![](/Lab02/Lab02_3/SpringInitializr.png)
+
+<br>
+
+Para correr a aplicação, deve ser executado os seguintes comandos:
+
+```bash
+$ mvn clean package
+$ ./mvnw spring-boot:run
+```
+or 
+```bash
+$ mvn clean package
+$ mvn install -DskipTests && java -jar target\webapp1-0.0.1-SNAPSHOT.jarjava -jar 
+```
+
+> Notas:
+> O projeto estará disponível em `http://localhost:8080/`, no entanto deverà apresentar um erro, pois ainda não foi criada nenhuma pagina.
+
+![](/Lab02/Lab02_3/Erro1.png)
+
+<br>
+
+### Continuar (alineas b)
 
 # Review questions
 
