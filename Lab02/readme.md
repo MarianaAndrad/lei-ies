@@ -18,7 +18,7 @@ Uma vez que se insere no mundo da *web* é fundamental que seja executado num am
 
 <br>
 
-### <b> Apache Tomcat </b>
+### <b><u> Apache Tomcat </b></u>
 
 Para correr, vamos utilizar o servidor de aplicações **Apache Tomcat**.
 
@@ -32,9 +32,12 @@ Para correr, vamos utilizar o servidor de aplicações **Apache Tomcat**.
 > 3. Executar (corre em http://127.0.0.1:8080/)
 
 <br>
+
 O Tomcat inclui um **gestor do ambiente**, que permite controlar o servidor em http://localhost:8080/manager/. Os utilizadores autorizados são os que têm como role `manager-gui, manager-script` no ficheiro `/etc/tomcat<n>/tomcat-users.xml` configurado no passo 2.
 
-### Criar uma aplicação web
+<br>
+
+### <u>**Criar uma aplicação web**</u>
 
 É sugerido utilizar o *archetype* **webapp-javaee7**.
 
@@ -67,7 +70,7 @@ $ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Dversi
 
 <br>
 
-### Compilação
+### <u>**Compilação** </u>
 
 Uma vez criado o projeto, este deve ser testado. Para isso, deve ser compilado e executado.
 
@@ -86,13 +89,13 @@ Este ficheiro é utilizado para fazer *deploy* no Tomcat, em http://localhost:80
 
 <br>
 
-### Ambiente de desenvolvimento integrado com o IDE
+### <u>**Ambiente de desenvolvimento integrado com o IDE**</u>
 
 [IntelliJ](https://mkyong.com/intellij/intellij-idea-run-debug-web-application-on-tomcat/)
 
 <br>
 
-### Criar uma página web
+### <u> **Criar uma página web**</u>
 
 > Notas retiradas das secçoẽs: **Develop Servlet with @WebServelet Annotation** até **Handling Servelet and Response** [Tutorial](https://howtodoinjava.com/java/servlets/complete-java-servlets-tutorial/#webservlet_annotation)
 
@@ -135,7 +138,7 @@ public class MyFirstServlet extends HttpServlet {
 ```
 Dentro de cada método pode ser realizado todo o tipo de processamento.<br>
 
-#### Resposta HTML
+#### <u>**Resposta HTML**</u>
 A resposta pode ser um ficheiro HTML, que é enviado para o cliente, devendo neste caso ser defenido como o tipo de resposta e a pagina ser construida com recurso à classe `PrintWriter`.[!]https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/io/PrintWriter.html
 
 ```java
@@ -159,7 +162,7 @@ try {
 ```
 <br>
 
-#### Pedido de argumentos
+#### <u>**Pedido de argumentos**</u>
 Para obter paramtros dos pedidos, utiliza-se o método `getParameter()` da classe `HttpServletRequest`, que retorne uma `String` com o valor do argumento pedido, ou null caso não exista.
 
 ```java
@@ -168,7 +171,7 @@ String name = request.getParameter("name");
 
 <br>
 
-#### Server-side programming with embedded servers
+#### **<u>Server-side programming with embedded servers</u>**
 
 Em alternativa ao *deploy* num *container*, pode ser utilizado um servidor *embedded* para testar a aplicação,como o [Jetty](https://www.eclipse.org/jetty/documentation/current/embedding-jetty.html). Assim, todo o *life-cycle* da aplicação é gerido pelo servidor, que é executado no próprio programa.
 
@@ -205,12 +208,12 @@ Para correr a aplicação pelo terminal, deve ser executado o comando `mvn jetty
 
 <br>
 
-## <b>Spring Boot </b>
+## <u><b>Spring Boot </b></u>
 String Boot é uma plataforma de desenvolvimento rápido e simples de aplicações *web*, construida sobre o [Spring](https://spring.io/) Framework. É uma ferramenta que permite criar aplicações web com poucas linhas de código, sem a necessidade de configuração de ficheiros XML.
 
 <br>
 
-### Criar projeto maven com Spring 
+### <u>**Criar projeto maven com Spring**</u>
 
 Gerar o projeto maven com Spring Boot, utilizando o [Spring Initializr](https://start.spring.io/).<br>
 Deve ser adicionada a dependência `Spring Web` para criar uma aplicação web. <br>
@@ -240,7 +243,18 @@ $ mvn install -DskipTests && java -jar target\webapp1-0.0.1-SNAPSHOT.jarjava -ja
 
 ### Continuar (alineas b)
 
-# Review questions
+#### <u><b> Mudança de porta </b></u>
+Por defeito a aplicação é executada na porta 8080, mas pode ser alterada no ficheiro `application.properties`:
+
+```properties
+server.port=9090
+```
+
+> Esta alternativa e outras podem ser encontradas [aqui](https://www.baeldung.com/spring-boot-change-port) ou [aqui](https://howtodoinjava.com/spring-boot/change-server-default-port/)
+
+
+
+#  <u>**Review questions**</u>
 
 1. What are the responsibilities/services of a servlet container?
 
