@@ -253,6 +253,149 @@ server.port=9090
 > Esta alternativa e outras podem ser encontradas [aqui](https://www.baeldung.com/spring-boot-change-port) ou [aqui](https://howtodoinjava.com/spring-boot/change-server-default-port/)
 
 
+#### <u><b> Estrutura do projeto </u></b>
+Um projeto Spring Boot não requer nenhum layout de código especifico para funcionar. No entanto, existem algumas praticas recomendadas que ajudam. [aqui](https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-structuring-your-code)
+
+1. Definir o *package* em todas as classes;
+2. Manter a classe base (principal) numa pasta raiz e as restantes em pastas separadas;
+
+A listagem a seguir mostra um layout típico:
+
+    com
+        +- exemplo
+            +- meuaplicativo
+                +- MeuAplicativo.java
+                |
+                +- cliente
+                |  +- Customer.java
+                |  +- CustomerController.java
+                |  +- CustomerService.java
+                |  +- CustomerRepository.java
+                |
+                +- pedido
+                    +- Ordem.java
+                    +- OrderController.java
+                    +- OrderService.java
+                    +- OrderRepository.java 
+
+<br>
+
+### <u>**Resposta Dinamicas**</u>
+Com o Spring Boot, os pedidos HTTP são tratados por um **controlador**, que é uma classe com anotações `@Controller` ou `@RestController`. O controlador é responsável por receber a solicitação HTTP e devolver uma resposta HTTP.
+
+Os seus métodos são anotados com `@RequestMapping` para especificar qual o caminho que o método deve responder. O método pode ser anotado com `@GetMapping`, `@PostMapping`, `@PutMapping` ou `@DeleteMapping` para especificar o tipo de solicitação HTTP que o método deve responder.
+
+
+#### <u><b> Retornar HTML </b></u>
+Para retornar um HTML dinâmico, deve ser criado um ficheiro HTML na pasta `resources/templates` e deve ser retornado o nome do ficheiro no método do controlador.
+
+```java
+@Controller
+public class GreetingController {
+
+	@GetMapping("/greeting")
+	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+		model.addAttribute("name", name);
+		return "greeting";
+	}
+
+}
+```
+<br>
+
+Este fragmento de código define um controlador que responde a solicitações HTTP GET para `/greeting`. O método `greeting()` é anotado com `@RequestParam` para indicar que é um parâmetro de solicitação. O parâmetro `name` é opcional e tem o valor `World` por defeito. O valor do parâmetro é adicionado ao modelo, que é passado para a vista. 
+
+Para a construção do HTML pode ser utilizado o [Thymeleaf](https://www.thymeleaf.org/), um motor de modelo HTML que permite a criação de páginas HTML dinâmicas. 
+
+```html
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="'Hello, ' + ${name} + '!'" />
+
+<p th:text="'New Message: ' + ${message} + '!'" />
+</body>
+</html>
+```
+
+
+<br>
+
+#### <u>**criar uma página HTML**</u>
+Para criar uma página HTML, deve ser criado um ficheiro com a extensão `.html` na pasta `resources/templates`. <br>
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spring Boot Hello World</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+</body>
+</html>
+```
+
+> Nota: O ficheiro `index.html` é executado quando o utilizador acede à página `http://localhost:8080/`.
+
+ver mais [aqui](https://spring.io/guides/gs/serving-web-content/)
+<br>
+
+#### <u><b> Retornar JSON </b></u>
+
+Para construir aplicações **Restful** é necessário retornar dados no formato JSON. Para isso, deve ser criado um método no controlador que retorne um objeto que será convertido para JSON. 
+
+```java 
+@RestController
+public class GreetingController {
+
+    @GetMapping("/greeting")
+    public Greeting greeting(@RequestParam(name="name", required=false, defaultValue="World") String name) {
+        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+    }
+
+}
+```
+
+<br>
+
+```java
+public class Greeting {
+
+    private final long id;
+    private final String content;
+
+    public Greeting(long id, String content) {
+        this.id = id;
+        this.content = content;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+}
+```
+
+<br>
+
+```json
+{"id":1,"content":"Hello, World!"}
+```
+<br>
+
+> Ver mais [aqui](https://spring.io/guides/gs/rest-service/)
+
+### <u>**Pagina Incial Estática**</u>
+Para criar uma página inicial estática, deve ser criado um ficheiro `index.html` na pasta `resources/static`. <br>
+
 
 #  <u>**Review questions**</u>
 
