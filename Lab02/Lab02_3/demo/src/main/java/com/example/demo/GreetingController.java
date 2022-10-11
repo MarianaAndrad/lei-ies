@@ -20,12 +20,16 @@ public class GreetingController {
 
 @RestController
 public class GreetingController {
-    private static final String template = "Hello, %s!";
+    private static final String template = "Welcome, %s";
+    private static final String templateMessage = "Message: %s" ;
     private final AtomicLong counter = new AtomicLong();
 
     @GetMapping("/greeting")
-    public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+    public Greeting greeting(
+            @RequestParam(value = "name", required = false, defaultValue = "World") String name,
+            @RequestParam(value = "message", required = false, defaultValue = "") String message
+    ) {
+        return new Greeting(counter.incrementAndGet(), String.format(template, name),String.format(templateMessage, message));
     }
 
 }

@@ -2,18 +2,24 @@ package com.example.demo;
 
 public class Greeting {
     private final long id;
-    private final String content;
+    private final String name;
+    private final String message;
 
-    public Greeting(long id, String content) {
+    public Greeting(long id, String name,String message) {
         this.id = id;
-        this.content = content;
+        this.name = name;
+        this.message = message;
     }
 
     public long getId() {
         return id;
     }
 
-    public String getContent() {
-        return content;
+    public String getName() {
+        return name;
+    }
+
+    public String getMessage() {
+        return message;
     }
 }
