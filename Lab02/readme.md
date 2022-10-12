@@ -362,6 +362,7 @@ public class GreetingController {
 ```
 
 <br>
+Para o exemplo anterior, o método `greeting()` retorna um objeto `Greeting` que é convertido para JSON. Segue a classe `Greeting`:
 
 ```java
 public class Greeting {
@@ -386,20 +387,76 @@ public class Greeting {
 
 <br>
 
+Segue um exemplo de como o objeto é convertido para JSON:
+
 ```json
-{"id":1,"content":"Hello, World!"}
+{
+    "id": 1,
+    "content": "Hello, World!"
+}
 ```
-<br>
 
 > Ver mais [aqui](https://spring.io/guides/gs/rest-service/)
+
+<br>
 
 ### <u>**Pagina Incial Estática**</u>
 Para criar uma página inicial estática, deve ser criado um ficheiro `index.html` na pasta `resources/static`. <br>
 
+## <u>**Implementação de uma API sobre HTTP**</u>
+Através do Spring Boot é possível criar uma API sobre HTTP. Para isso, deve ser criado um controlador com a anotação `@RestController`. <br>
+
+
+#### <u><b> Criar controladores </b></u>
+Foram criados os seguintes controladores:
+-`QuoteController` - controlador que retorna uma frase aleatória;
+-`ListShowController` - controlador que retorna uma lista de shows;
+-`QuoteSpecificShowController` - controlador que retorna uma frase aleatória de um show específico.
+
+<br>
+
+#### <u><b> Criar classes de modelo </b></u>
+Foram criadas as seguintes classes de modelo:
+-`Quote` - classe que representa uma frase;
+-`Show` - classe que representa um show.
+
+<br>
+
+#### <u><b> Criar classes de serviço </b></u>
+A melhor opção para um melhor, seria criar uma classe de serviço para cada controlador. No entanto,neste projeto foi apenas criado os controladores, onde as classes de serviço foram implementadas dentro dos controladores. <br>
+
+Mas aqui fica a idea de que classes de serviços teriam sido criadas:
+-`QuoteService` - classe que contém os métodos que retornam uma frase aleatória;
+-`ShowService` - classe que contém os métodos que retornam uma lista de shows e uma frase aleatória de um show específico.
+
+
+<br>
+
+> Nota foi ainda alterada a porta de execução da aplicação para `9099` no ficheiro `application.properties`.
+> Foi criado um index.html na pasta `resources/static` para que quando o utilizador aceda à página `http://localhost:9099/` seja apresentado uma página com os links aos quais pode aceder.
+
+### <u><b> Execução </b></u>
+Para executar a aplicação, deve ser executado o seguinte comando:
+
+```bash
+mvn spring-boot:run
+```
+
+<br>
+
+POdem às seguintes paginas:
+- `http://localhost:9099/` para ver a página inicial.
+- `http://localhost:9099/api/quote` para ver uma frase aleatória.
+- `http://localhost:9099/api/shows` para ver uma lista de shows.
+- `http://localhost:9099/api/shows/{show}` para ver uma frase aleatória de um show específico.
+
+<br>
 
 #  <u>**Review questions**</u>
 
 1. What are the responsibilities/services of a servlet container?
+
+
 
 2. Explain, in brief, the "dynamics" of Model-View-Controller approach used in Spring Boot to serve web content.(You may exemplify with a context of the previous exercises)
 
