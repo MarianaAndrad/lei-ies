@@ -241,9 +241,7 @@ $ mvn install -DskipTests && java -jar target\webapp1-0.0.1-SNAPSHOT.jarjava -ja
 
 <br>
 
-### Continuar (alineas b)
-
-#### <u><b> Mudança de porta </b></u>
+### <u><b> Mudança de porta </b></u>
 Por defeito a aplicação é executada na porta 8080, mas pode ser alterada no ficheiro `application.properties`:
 
 ```properties
@@ -253,7 +251,7 @@ server.port=9090
 > Esta alternativa e outras podem ser encontradas [aqui](https://www.baeldung.com/spring-boot-change-port) ou [aqui](https://howtodoinjava.com/spring-boot/change-server-default-port/)
 
 
-#### <u><b> Estrutura do projeto </u></b>
+### <u><b> Estrutura do projeto </u></b>
 Um projeto Spring Boot não requer nenhum layout de código especifico para funcionar. No entanto, existem algumas praticas recomendadas que ajudam. [aqui](https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-structuring-your-code)
 
 1. Definir o *package* em todas as classes;
@@ -325,7 +323,7 @@ Para a construção do HTML pode ser utilizado o [Thymeleaf](https://www.thymele
 
 <br>
 
-#### <u>**criar uma página HTML**</u>
+#### <u>**Criar uma página HTML**</u>
 Para criar uma página HTML, deve ser criado um ficheiro com a extensão `.html` na pasta `resources/templates`. <br>
 
 ```html
@@ -362,6 +360,7 @@ public class GreetingController {
 ```
 
 <br>
+
 Para o exemplo anterior, o método `greeting()` retorna um objeto `Greeting` que é convertido para JSON. Segue a classe `Greeting`:
 
 ```java
@@ -444,17 +443,17 @@ mvn spring-boot:run
 
 <br>
 
-POdem às seguintes paginas:
-- `http://localhost:9099/` para ver a página inicial.
-- `http://localhost:9099/api/quote` para ver uma frase aleatória.
-- `http://localhost:9099/api/shows` para ver uma lista de shows.
-- `http://localhost:9099/api/shows/{show}` para ver uma frase aleatória de um show específico.
+Podem aceder às seguintes paginas:
+- `http://localhost:9099/` - para ver a página inicial.
+- `http://localhost:9099/api/quote` - para ver uma frase aleatória.
+- `http://localhost:9099/api/shows` - para ver uma lista de shows.
+- `http://localhost:9099/api/shows/{show}`  - para ver uma frase aleatória de um show específico.
 
 <br>
 
 #  <u>**Review questions**</u>
 
-1. Quais as responsabilidades de um servlet container?
+1. **Quais as responsabilidades de um servlet container?**
 
    O *servlet container* é um componente do servidor responsàvel pela gestão de pedidos HTTP, permitindo a criação de aplicações web.
    O servlet container é responsável por :
@@ -464,12 +463,13 @@ POdem às seguintes paginas:
     -  O servlet container é responsável por criar um novo thread para cada pedido HTTP, de forma a que o servidor possa processar vários pedidos ao mesmo tempo.
     -  O servlet container é responsável por gerir o ciclo de vida dos servlets, ou seja, é responsável por criar e destruir os servlets quando necessário.
   
+  <br>
 
-2. Explain, in brief, the "dynamics" of Model-View-Controller approach used in Spring Boot to serve web content.(You may exemplify with a context of the previous exercises)
+2. **Explain, in brief, the "dynamics" of Model-View-Controller approach used in Spring Boot to serve web content.(You may exemplify with a context of the previous exercises)**
     
     O padrão de projeto MVC é um padrão de arquitetura de software que separa a aplicação em três componentes: model, view e controller. 
     Na camada de controle processa as requisições e respostas e faz a ligação com a camada de modelo, que contém as regras de negócio da aplicação, e a camada de visão, responsável pela interação com o usuário.
-    <br>
+
     No Spring Boot, o controller é representado por um *servlet* e o model é representado por um objeto Java. A interface com o utilizador é representada por uma página HTML. O *servlet container* é responsável por gerar a view, ou seja, o *servlet container* é responsável por gerar a página HTML que é enviada ao cliente.
 
     Recorrendo ao exemplo da aplicação web que foi desenvolvida, o controlador é representado pela classe `GreetingController`, o modelo é representado pela classe `Greeting` e a view é representada pelo ficheiro `greeting.html`.
@@ -477,11 +477,14 @@ POdem às seguintes paginas:
     - A camada de model, representada pela classe `Greeting`, contém os atributos `id` e `content`, que são utilizados para representar o conteúdo da mensagem.
     - A camada de view, representada pelo ficheiro `greeting.html`, que contém o template HTML que é utilizado para gerar a página HTML que é enviada ao cliente.
     - E a camada de controller foi representada pela classe `GreetingController`, que contém o método `greeting()` que é invocado quando o cliente faz um pedido HTTP para o endereço `http://localhost:8080/greeting`. Este método é responsável por gerar a resposta HTTP, que é enviada ao cliente.
+     
+    <br>
 
     Numa forma mais reumida, o Spring Boot utiliza o padrão MVC no sentido de separar a aplicação em três componentes: model, view e controller. O controller é representado por uma classe com a notação `@Controller`, o model é representado por uma classe Java e a view é representada por um ficheiro HTML. 
 
+    <br>
 
-3. Inspect the POM.xml for the previous SpringBoot projects. What is the role of the “starters” dependencies?
+3. **Inspect the POM.xml for the previous SpringBoot projects. What is the role of the “starters” dependencies?**
    
     Os *starters* são um conjunto de dependências que permitem a criação de aplicações Spring Boot.Este conjunto de dependências que permitem a utilização de funcionalidades específicas.
     Por exemplo, o starter web permite a utilização de funcionalidades para a criação de aplicações web. 
@@ -492,55 +495,50 @@ POdem às seguintes paginas:
     - Ajudam a evitar conflitos de dependências;
     - Aumenta a produtividade dimunindo o tempo de configuração do projeto.
     - Não é necessário adicionar todas as dependências necessárias para a utilização de uma funcionalidade específica, basta adicionar o starter correspondente.
+  
+    <br>
 
     [Documentação](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.build-systems.starters) 
+
     [outra fonte](https://www.geeksforgeeks.org/spring-boot-starters/)
 
+    <br>
 
-4. Which annotations are transitively included in the @SpringBootApplication?
+
+4. **Which annotations are transitively included in the @SpringBootApplication?**
 
     As anotações transitivamente incluídas no `@SpringBootApplication` são:
     - `@Configuration` - anotação que indica que a classe é uma configuração, ou seja, permite o resgisto de componentes da aplicação adicionais e importar outras configurações.;
     - `@EnableAutoConfiguration` - anotação que indica que a configuração é automática;
     - `@ComponentScan` - anotação que indica que a classe deve ser escaneada;
 
-5. Search online for the topic “Best practices for REST APIdesign”. From what you could learn, select your “top 5”practices,and briefly explain them in you own words.
+    <br>
 
-Top 5 de melhores práticas para o design de API REST:
-1. Aceitar e devolver dados no formato JSON;
-2. Usar substantivos em vez de verbos;
-3. Usar SSL/TLS para a comunicação entre o cliente e o servidor;
-4. Fornecer uma documentação da API;
-5. Controlo de versões da API.
+5. **Search online for the topic “Best practices for REST APIdesign”. From what you could learn, select your “top 5”practices,and briefly explain them in you own words.**
 
+    Top 5 de melhores práticas para o design de API REST:
 
-Como uma boa pratica inicial, deve-se  **Aceitar e devolver dados no formato JSON**. Pelo facto, de Json ser um formato de dados aberto e padronizado, que é independente de linguagem de programação, e que é utilizado por várias linguagens de programação, como por exemplo, Java, Python, C#, PHP, etc.
-Por este ser derivado do JavaScript permite a utilização de funções JavaScript para manipular os dados, como por exemplo, a função `JSON.parse()` que permite a conversão de uma string JSON para um objeto JavaScript.
-Por outro lado, o formato JSON é mais leve que o XML, o que permite uma melhor performance da aplicação. E todas as tecnologias do lado do servidor possuem bibliotecas que permitem a manipulação de dados no formato JSON, sem qualquer dificuldade.
-<br>
+       1. Aceitar e devolver dados no formato JSON;
+       2. Usar substantivos em vez de verbos;
+       3. Usar SSL/TLS para a comunicação entre o cliente e o servidor;
+       4. Fornecer uma documentação da API;
+       5. Controlo de versões da API.
 
-Outra boa pratica é **Usar substantivos em vez de verbos**. A razão por trás disso é que o HTTP já define os verbos que podem ser utilizados para realizar operações sobre os recursos. Por exemplo, o verbo `GET` é utilizado para obter um recurso, o verbo `POST` é utilizado para criar um recurso, o verbo `PUT` é utilizado para atualizar um recurso e o verbo `DELETE` é utilizado para eliminar um recurso.
+    <br>
 
-Pelo que devemos usar substantivos para identificar a entidade que o ponto de extremidade que estamos recuperando ou manipulando como o nome do caminho. Por exemplo, se quisermos recuperar a lista de todos os alunos, devemos usar o caminho `/alunos` e não `/obterAlunos`.
+    Como uma boa pratica inicial, deve-se  **Aceitar e devolver dados no formato JSON**. Pelo facto, de Json ser um formato de dados aberto e padronizado, que é independente de linguagem de programação, e que é utilizado por várias linguagens de programação, como por exemplo, Java, Python, C#, PHP, etc.
+    Por este ser derivado do JavaScript permite a utilização de funções JavaScript para manipular os dados, como por exemplo, a função `JSON.parse()` que permite a conversão de uma string JSON para um objeto JavaScript.
+    Por outro lado, o formato JSON é mais leve que o XML, o que permite uma melhor performance da aplicação. E todas as tecnologias do lado do servidor possuem bibliotecas que permitem a manipulação de dados no formato JSON, sem qualquer dificuldade.
 
-<br>
+    Outra boa pratica é **Usar substantivos em vez de verbos**. A razão por trás disso é que o HTTP já define os verbos que podem ser utilizados para realizar operações sobre os recursos. Por exemplo, o verbo `GET` é utilizado para obter um recurso, o verbo `POST` é utilizado para criar um recurso, o verbo `PUT` é utilizado para atualizar um recurso e o verbo `DELETE` é utilizado para eliminar um recurso.
+    Pelo que devemos usar substantivos para identificar a entidade que o ponto de extremidade que estamos recuperando ou manipulando como o nome do caminho. Por exemplo, se quisermos recuperar a lista de todos os alunos, devemos usar o caminho `/alunos` e não `/obterAlunos`.
 
-Para mantermos a segurança dos dados, deve-se **Usar SSL/TLS para a comunicação entre o cliente e o servidor**. O SSL/TLS é um protocolo que permite a comunicação segura entre o cliente e o servidor. O SSL/TLS é utilizado para garantir a autenticidade do servidor, a integridade dos dados e a confidencialidade dos dados.
+    Para mantermos a segurança dos dados, deve-se **Usar SSL/TLS para a comunicação entre o cliente e o servidor**. O SSL/TLS é um protocolo que permite a comunicação segura entre o cliente e o servidor. O SSL/TLS é utilizado para garantir a autenticidade do servidor, a integridade dos dados e a confidencialidade dos dados.
 
-<br>
+    A melhor maneira de facilitar a utilização da API, na forma de ajudar os consumidores e aprender a usà-la corretamente, é ao **Fornecer uma  boa documentação da API**. A documentação da API deve conter a descrição dos pontos de extremidade, os parâmetros de entrada e os parâmetros de saída. Deve conter também exemplos de utilização da API. A documentação da API deve ser fornecida em formato HTML, PDF ou Markdown.
 
-A melhor maneira de facilitar a utilização da API, na forma de ajudar os consumidores e aprender a usà-la corretamente, é ao **Fornecer uma  boa documentação da API**. A documentação da API deve conter a descrição dos pontos de extremidade, os parâmetros de entrada e os parâmetros de saída. Deve conter também exemplos de utilização da API. A documentação da API deve ser fornecida em formato HTML, PDF ou Markdown.
+    E por último no top 5 de boas praticas, **Controlo de versões da Api**.
+    Torna-se essencial o controlo de versões da API, para que possamos fazer alterações na API sem afetar os clientes que já estão a utilizar a API. 
+    Para isso, devemos adicionar um prefixo de versão à URL da API. Por exemplo, se quisermos adicionar uma nova funcionalidade à API, podemos adicionar um novo ponto de extremidade à API, com a versão 2 da API. Por exemplo, se quisermos adicionar um novo ponto de extremidade para recuperar a lista de todos os alunos, podemos adicionar o ponto de extremidade `/v2/alunos` e manter o ponto de extremidade `/v1/alunos` para recuperar a lista de todos os alunos na versão 1 da API. DEsta foram se a Api for publica, as pessoas podem manter a versão que pretendem, sem que nada seja afetado.
 
-
-
-<br>
-
-E por ultimo no top 5 de boas praticas, **Controlo de versões da Api**.
-Torna-se essencial o controlo de versões da API, para que possamos fazer alterações na API sem afetar os clientes que já estão a utilizar a API. 
-Para isso, devemos adicionar um prefixo de versão à URL da API. Por exemplo, se quisermos adicionar uma nova funcionalidade à API, podemos adicionar um novo ponto de extremidade à API, com a versão 2 da API. Por exemplo, se quisermos adicionar um novo ponto de extremidade para recuperar a lista de todos os alunos, podemos adicionar o ponto de extremidade `/v2/alunos` e manter o ponto de extremidade `/v1/alunos` para recuperar a lista de todos os alunos na versão 1 da API. DEsta foram se a Api for publica, as pessoas podem manter a versão que pretendem, sem que nada seja afetado.
-
-
-<br>
-Desta forma, entende-se que ao usar boas praticas no design de API REST, podemos criar uma API que é fácil de usar, fácil de entender e fácil de manter, para todos os clientes que a utilizam.
-
-
+    Desta forma, entende-se que ao usar boas praticas no design de API REST, podemos criar uma API que é fácil de usar, fácil de entender e fácil de manter, para todos os clientes que a utilizam.
