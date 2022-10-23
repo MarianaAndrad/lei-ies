@@ -5,6 +5,7 @@ author: <b> Mariana Andrade </b>
 date: <b> --/10/2022 </b>
 
 ## **Acesso a DataBases com Spring Boot**
+
 A API de persistência Java define uma <u>interface padrão para gerir dados em bases de dados relacionais</u>.
 
 *O Spring  Boot facilita a criação de aplicativos CRUD por meio de repositórios CRUD baseados em JPA padrão.* 
@@ -24,6 +25,8 @@ Para o projeto Spring Boot têm-se de colocar as seguintes dependências:
 > **Thymeleaf** - para renderizar modelos HTML <br>
 > **Validation** - para validar dados de entrada <br>
 
+<br>
+A arquitetura de camadas é uma abordagem de desenvolvimento de software que separa a aplicação em camadas. Cada camada tem uma responsabilidade específica e as camadas são independentes entre si. A camada de apresentação é responsável por apresentar os dados da camada de negócio. A camada de negócio é responsável por processar os dados e executar as regras de negócio. A camada de dados é responsável por armazenar os dados.
 <br>
 
 ###  **Camada de Dados**
@@ -191,10 +194,76 @@ public class SpringBootWebApplication {
 
 
 
+## Criar instância local de servidor MySQL com Docker
+Para criar uma instância local de servidor MySQL com Docker, basta executar o seguinte comando no terminal:
+
+```bash
+$ docker run --name mysql5 -e MYSQL_ROOT_PASSWORD=secret1 -e MYSQL_DATABASE=demo -e MYSQL_USER=demo -e MYSQL_PASSWORD=secret2-p 33060:3306 -d mysql/mysql-server:5.7
+```
+
+Uma outra forma de criar a instância é através do ficheiro `docker-compose.yml`:
+
+```yml
+services:
+  mysql:
+    image: mysql/mysql-server:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret1
+      - MYSQL_PASSWORD=secret2
+      - MYSQL_DATABASE=demo
+      - MYSQL_USER=demo
+    ports:
+      - 33060:3306/tcp
+```
+
+Configurar projeto para se conectar à base de dados, através do ficheiro `application.properties`. Ver mais [aqui](https://howtodoinjava.com/spring-boot2/datasource-configuration/#configurations).
+
+```properties
+# MySQLspring.datasource.url=jdbc:mysql://127.0.0.1:33060/demo
+spring.datasource.username=demo
+spring.datasource.password=secret2
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+
+# Strategy to auto updatethe schemas  (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto = update
+```
+
+>**Nota:** O ficheiro `application.properties` deve ser colocado no diretório `src/main/resources` do projeto.
+
+## Criar interface REST
+
+> [Tutorial](https://www.javaguides.net/2018/09/spring-boot-2-jpa-mysql-crud-example.html)
+
+> Codigo disponibilizado no [Repositório](https://github.com/RameshMF/spring-boot2-jpa-crud-example)
+
+O objetivo é criar uma API REST para um aplicativo de gerenciamento de funcionários usando Spring Boot 2, Spring Data JPA, MySQL e Maven.
+
+### ** Criar um projeto Maven **
+
+Crie um projeto Maven com o nome `spring-boot2-jpa-crud-example` e adicione as seguintes dependências: 
+ 1. web;
+ 2. JPA;
+ 3. MySQL Driver;
+ 4. DevTools;
+ 5. validation.
+
+### ** Criar entidade Employee (Entidades) **
+### ** Criar interface EmployeeRepository (Gestão de entidades) **
+### ** Criar classe EmployeeController (controlador REST)**
+### ** Execeções **
+feito 
+
+### ** Dispobilizar a aplicação **
+### ** Testar a aplicação **
+### ** Testar a aplicação com o Postman **
+
+
+
 # Review questions
 
 1. Explain the differences between the RestController and Controller components used in different
 parts of this lab. <br>
+
 
 1. Create a visualization of the Spring Boot layers (UML diagram or similar), displaying the key
 abstractions in the solution of 3.3, in particular: entities, repositories, services and REST controllers.
@@ -207,3 +276,4 @@ Describe the role of the elements modeled in the diagram. <br>
 
 
 @utowired para idzer ao spring boot que para e instancia 
+
