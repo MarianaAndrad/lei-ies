@@ -2,7 +2,7 @@
 
 author: <b> Mariana Andrade </b>
 
-date: <b> --/10/2022 </b>
+date: <b> 26/10/2022 </b>
 
 ## **Acesso a DataBases com Spring Boot**
 
@@ -445,6 +445,13 @@ public class QuoteService {
 
 > [Tutorial](https://spring.io/guides/topicals/spring-boot-docker/)
 
+```bash
+$ docker compose up --build -d
+$ docker compose down
+$ docker logs nameContainer
+```
+<br>
+
 # Review questions
 
 1. Explique as diferenças entre os componentes RestController e Controller usados em diferentes
@@ -484,7 +491,7 @@ Describe the role of the elements modeled in the diagram. <br>
     - `index.html` - Ficheiro HTML que contém a página inicial da aplicação.<br><br>
 
 
-1. Explain the annotations @Table, @Colum, @Id found in the Employee entity. <br>
+3. Explain the annotations @Table, @Colum, @Id found in the Employee entity. <br>
 
     **Resposta**: 
     A tabela onde cada entidade serà guardada é definida através da anotação `@Table`. O nome da tabela é definido através do atributo `name` da anotação. (`@Table(name=<tableName>)`)<br>
@@ -495,7 +502,7 @@ Describe the role of the elements modeled in the diagram. <br>
 
 
 
-2. Explain the use of the annotation @AutoWired (in the Rest Controller class).<br>
+4. Explain the use of the annotation @AutoWired (in the Rest Controller class).<br>
     **Resposta**: A anotação `@AutoWired` é utilizada para injetar dependências. No caso do controlador, é utilizado para injetar o repositório, que é uma dependência do controlador. <br>
    
 
