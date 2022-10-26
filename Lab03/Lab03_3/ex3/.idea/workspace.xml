@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d9fa8118-67ac-4359-be36-7ad24d0829e4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Lab03_2/springboot2-jpa-crud-example /src/main/java/net/guides/springboot2/springboot2jpacrudexample/exception/ErrorDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Lab03_2/springboot2-jpa-crud-example /src/main/java/net/guides/springboot2/springboot2jpacrudexample/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/controller/ApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/controller/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/exception/ErrorDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/model/Quote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/repository/QuoteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/repository/ShowRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/service/ApiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Lab01/Lab1.2/MyWeatherRadar/target/classes/pt/ua/deti/CityForecast.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Lab01/Lab1.2/MyWeatherRadar/target/classes/pt/ua/deti/CityForecast.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Lab01/Lab1.2/MyWeatherRadar/target/classes/pt/ua/deti/IpmaCityForecast.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Lab01/Lab1.2/MyWeatherRadar/target/classes/pt/ua/deti/IpmaCityForecast.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Lab01/Lab1.2/MyWeatherRadar/target/classes/pt/ua/deti/WeatherStarter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Lab01/Lab1.2/MyWeatherRadar/target/classes/pt/ua/deti/WeatherStarter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Lab02/Lab02_4/demo/src/main/java/pt/ua/ies/s10323/demo/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Lab02/Lab02_4/demo/src/main/java/pt/ua/ies/s10323/demo/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../readme.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GeKbii3zqn84Akzsm5hBDcS7Y5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mariana/Universidade/Lei-IES/IES_103823/Lab03/Lab03_3/ex3/src/main/java/pt/ua/s103823/ex3&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Lombok&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;4909e630b11722599843499bf0509302&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="pt.ua.s103823.ex3.model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Ex3Application">
+    <configuration name="generated-requests | #12" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="12" requestIdentifier="#12" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="5" requestIdentifier="#5" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="6" requestIdentifier="#6" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #8" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="8" requestIdentifier="#8" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #9" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="9" requestIdentifier="#9" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="Ex3Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ex3" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pt.ua.s103823.ex3.Ex3Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #12" />
+        <item itemvalue="HTTP Request.generated-requests | #9" />
+        <item itemvalue="HTTP Request.generated-requests | #8" />
+        <item itemvalue="HTTP Request.generated-requests | #6" />
+        <item itemvalue="HTTP Request.generated-requests | #5" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9fa8118-67ac-4359-be36-7ad24d0829e4" name="Changes" comment="" />
+      <created>1666743684259</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666743684259</updated>
+      <workItem from="1666743685496" duration="789000" />
+      <workItem from="1666744713318" duration="5048000" />
+      <workItem from="1666791151968" duration="1228000" />
+      <workItem from="1666792726788" duration="6279000" />
+      <workItem from="1666799356691" duration="1444000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,10 @@
+services:
+  mysql:
+    image: mysql/mysql-server:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret1
+      - MYSQL_PASSWORD=secret2
+      - MYSQL_DATABASE=demo
+      - MYSQL_USER=demo
+    ports:
+      - 33050:3306/tcp

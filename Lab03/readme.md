@@ -28,14 +28,13 @@ Para o projeto Spring Boot têm-se de colocar as seguintes dependências:
 <br>
 A arquitetura de camadas é uma abordagem de desenvolvimento de software que separa a aplicação em camadas. Cada camada tem uma responsabilidade específica e as camadas são independentes entre si. A camada de apresentação é responsável por apresentar os dados da camada de negócio. A camada de negócio é responsável por processar os dados e executar as regras de negócio. A camada de dados é responsável por armazenar os dados.
 <br>
+<br>
 
 ###  **Camada de Dados**
 
 #### <u>Camada de Domínio</u>
 A camada de domínio contém as entidades que representam os dados que o aplicativo manipula. <br>
 Cada entidade que vai ser armazenada com o JPA deve ser anotada com `@Entity`. Neste caso, a classe User é uma entidade JPA e será mapeada para uma tabela no banco de dados. A anotação `@Table` define o nome da tabela. A anotação `@Id` indica que o campo id é a chave primária da tabela. A anotação `@GeneratedValue` define que o valor do campo id é gerado automaticamente, através da estratégia `GenerationType.AUTO`.
-
-```java
 
 > Os marcadores utilizados para anotação são do pacote `javax.persistence`.
 
@@ -163,16 +162,16 @@ public class SpringBootWebApplication {
 <br>
 
 ## **Questions 3_1**
-???
+
 1. A classe *UserController* recebe uma instância de *userRepository* através do seu construtor. Como é que este novo repositório é instanciado?
    
-    **R:** O Spring Data JPA fornece uma implementação para o repositório. O Spring injeta a implementação no controlador. 
+    **R:** A classe *UserController* recebe uma instância de *userRepository* através do seu construtor. O *userRepository* instância tem operações CRUD para manipular os dados no banco de dados. A instância do *userRepository* é injetada no controlador usando a anotação `@Autowired`.
 
-???
-2. Listar os métodos invocados no objecto *userRepository* pelo *UserController*. Onde são definidos estes métodos?
+
+1. Listar os métodos invocados no objecto *userRepository* pelo *UserController*. Onde são definidos estes métodos?
    
-    **R:** Os métodos invocados são `save()` e `findAll()`. Estes métodos são definidos na interface *CrudRepository*. 
-    > Métodos principais
+    **R:** Os métodos invocados no objecto *userRepository* pelo *UserController* são: `save()`, `findAll()`, `findById()`, `deleteById()`. Estes métodos são definidos na interface *CrudRepository*.
+    > Alguns metodos: <br>
     >
     > `findAll(): List<T>` Permite consultar todos os registos na base de dados
     >
@@ -181,13 +180,15 @@ public class SpringBootWebApplication {
     > `findById(ID id): T entity` Permite aceder a uma entidade através do seu ID
     >
     > `delete(T entity)` Permite eliminar uma entidade
+    >...
 
-3. Onde é que os dados estão a ser guardados?
+
+2. Onde é que os dados estão a ser guardados?
    
     **R:** Os dados estão a ser guardados na base de dados H2. Esta é uma base de dados em memória que é criada automaticamente quando a aplicação é executada. Assim, quando  a aplicação é interrompida, os dados são perdidos.
     > Para prevenir este comportamento e assim garantir a persistência dos dados esta dependência deve ser configurada nesse sentido, tal como é descrito na [documentação oficial](http://www.h2database.com/html/features.html#in_memory_databases).
 
-4. Onde é definida a regra para o endereço de correio electrónico *não vazio*?
+3. Onde é definida a regra para o endereço de correio electrónico *não vazio*?
 
     **R:** A regra é definida na classe *User* através da anotação `@NotBlank` é usada para validar o campo email, garantindo que não é vazio. 
     No entanto, poderia ter sido outra anomotação, como por exemplo `@NotEmpty` ou `@NotNull`.
@@ -228,7 +229,10 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
 spring.jpa.hibernate.ddl-auto = update
 ```
 
->**Nota:** O ficheiro `application.properties` deve ser colocado no diretório `src/main/resources` do projeto.
+>**Nota** <br>
+> O ficheiro `application.properties` deve ser colocado no diretório `src/main/resources` do projeto.
+
+<br>
 
 ## Criar interface REST
 
@@ -238,7 +242,12 @@ spring.jpa.hibernate.ddl-auto = update
 
 O objetivo é criar uma API REST para um aplicativo de gerenciamento de funcionários usando Spring Boot 2, Spring Data JPA, MySQL e Maven.
 
-### ** Criar um projeto Maven **
+> **Nota:** <br>
+> Feito como no exercicio anterior, apenas com dados diferentes.
+> Importante ver as secções a [exceções](#-execeçõs) e o [criar queries](#criar-queries) não foram abordados anteriormente.
+> 
+
+### <u> **Criar um projeto Maven** </u>
 
 Crie um projeto Maven com o nome `spring-boot2-jpa-crud-example` e adicione as seguintes dependências: 
  1. web;
@@ -247,33 +256,222 @@ Crie um projeto Maven com o nome `spring-boot2-jpa-crud-example` e adicione as s
  4. DevTools;
  5. validation.
 
-### ** Criar entidade Employee (Entidades) **
-### ** Criar interface EmployeeRepository (Gestão de entidades) **
+<br>
+
+### </u>**Criar entidade Employee (Entidades)**</u>
+
+Tal como na aplicação anterior,o atributo que identifica a entidade é o `id`, definido como `@Id` e `@GeneratedValue`.
+
+A entidade ainda será mapeada para a tabela `employee` na base de dados. A classe Employee terá os seguintes campos:
+
+ 1. id (chave primária);
+ 2. firstName;
+ 3. lastName;
+ 4. emailId.
+
+```java
+@Entity
+@Table(name = "employee")
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @Column(name = "first_name", nullable = false)
+    private String firstName;
+    
+    // Other attributes
+    // getters and setters
+}
+```
+<br>
+
+### <u>**Criar interface EmployeeRepository (Gestão de entidades)**</u>
+Para gerir as operações de CRUD, é necessário criar uma interface que extende a interface `JpaRepository`. Esta interface fornece métodos para criar, ler, atualizar e excluir (CRUD) operações em uma base de dados.
+
+```java
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {}
+```
+A classe estendida pela que criamos, `JpaRepository`, fornece métodos CRUD para a classe `Employee` e o tipo de chave primária `Long`.
+
+>Métodos CRUD fornecidos pela interface `JpaRepository`:
+> 1. `save(S entity)` Salva uma entidade e retorna a mesma.
+> 2. `saveAll(Iterable<S> entities)` Salva todas as entidades fornecidas e retorna a mesma.
+> 3. `findById(ID id)` Retorna uma entidade com o ID fornecido.
+> 4. `existsById(ID id)` Retorna `true` se uma entidade com o ID fornecido existir.
+> 5. `findAll()` Retorna todas as entidades.
+> 6. `findAllById(Iterable<ID> ids)` Retorna todas as entidades com os IDs fornecidos.
+> 7. `deleteById(ID id)` Deleta a entidade com o ID fornecido.
+> entre outros.
+
 ### ** Criar classe EmployeeController (controlador REST)**
-### ** Execeções **
-feito 
+Para permitir a gestão do repositório através de pedidos HTTP temos agora de criar a interface REST, através de um controlador  `EmployeeController`, anotado com `@RestController`. 
+    
+```java
+@RestController
+@RequestMapping("/api/v1")
+public class EmployeeController {
+    @Autowired
+    private EmployeeRepository employeeRepository;
+    
+    // Other methods
+}
+```
+<br>
 
-### ** Dispobilizar a aplicação **
-### ** Testar a aplicação **
-### ** Testar a aplicação com o Postman **
+### <u>**Execeçõs**</u>
+É preciso implementar mecanismos que deem resposta a casos em são feitas consultas sobre entidades não existentes.
+
+Esta deve ser uma classe que descende de `Exception` e tem anotado o *status* HTTP que retorna através de `@ResponseStatus`.
+
+```java
+@ResponseStatus(value = HttpStatus.NOT_FOUND)
+public class ResourceNotFoundException extends Exception{
+
+    private static final long serialVersionUID = 1L;
+
+    public ResourceNotFoundException(String message){
+        super(message);
+    }
+}
+```
+<br>
+
+### <u>**Criar queries**</u>
+
+[tutorial](https://spring.io/guides/gs/accessing-data-jpa/#_create_simple_queries)
+
+Até aqui só foram configuradas consultas de todos os elementos da base de dados sem filtros. No entanto, a filtragem pelos atributos das entidades é bastante simples e implementada simplesmente através da definição de um método na interface do repositório.
+
+A sua implementação é criada por defeito pela `Spring Data JPA`.
+
+```java
+@Repository
+public interface EmployeeRepository extends JpaRepository<Employee, Long>{
 
 
+    List<Employee> findByEmailId(String emailID);
+
+    List<Employee> findByFirstName(String firstName);
+
+    List<Employee> findByLastName(String lastName);
+}
+```
+<br>
+
+## Ultima etapa
+
+> **Nota**: só vão ser abordados os conceitos ainda não falados
+
+### <u>**Criar entidades**</u>
+Anotação novas utilizadas:
+
+1. `@OneToMany` - indica que a entidade é uma coleção de outras entidades.
+2. `@JoinColumn` - indica que a entidade é uma chave estrangeira.
+3. `@ManyToOne` - indica que a entidade é uma chave estrangeira.
+
+```java
+@Entity
+@Table(name = "shows")
+public class Show  {
+
+    @Column(name = "source")
+    private String source;
+    @Column(name = "type")
+    private String type;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @OneToMany(mappedBy = "show")
+    private List<Quote> quotes;
+    
+    // Other attributes
+    // getters and setters
+}
+
+@Entity
+@Table(name = "quotes")
+public class Quote {
+    private String quote;
+    private String author;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+
+    @ManyToOne
+    @JoinColumn(name = "show_id")
+    private Show show;
+    
+    // Other attributes
+    // getters and setters
+}
+```
+<br>
+
+
+### <u>**Service**</u>
+A camada de serviço é responsável por implementar a lógica de negócio da aplicação. É aqui que se implementam as regras de negócio e as validações.
+Este é um componente que é utilizado por outros componentes da aplicação, como os controladores REST.
+
+```java
+@Service
+public class QuoteService {
+
+    @Autowired
+    private QuoteRepository quoteRepository;
+
+    @Autowired
+    private ShowRepository showRepository;
+
+    public List<Quote> getAllQuotes() {
+        return quoteRepository.findAll();
+    }
+
+    public Quote getQuoteById(long id) {
+        return quoteRepository.findById(id).get();
+    }
+
+    /// Other methods
+}
+```
+
+<br>
+
+## Deploy num Docker Container
+
+> [Tutorial](https://spring.io/guides/topicals/spring-boot-docker/)
 
 # Review questions
 
-1. Explain the differences between the RestController and Controller components used in different
-parts of this lab. <br>
+1. Explique as diferenças entre os componentes RestController e Controller usados em diferentes
+partes deste laboratório. <br>
+    **Resposta**: 
+    A anotação `@Controller` indica que uma classe é um controlador, que gere pedidos HTTP. Esta classe pode ter métodos anotados com `@RequestMapping` para mapear pedidos HTTP para métodos específicos.
+    Abstrai o programador de estender classes base ou de fazer qualquer referência com à API do servlet. <br>
+    Contudo, a gestão de pedidos pode retornar vàrios tipos de respostas, entre as quais objetos. Para isso, é necessário que o método retorne um objeto, que será automaticamente convertido para JSON e retornado no corpo da resposta. Para tal basta adicionar a anotação `@ResponseBody` à classe do controller.<br>
 
+    Desta maneira, foram criados duas notações, `@RestController` e `@Controller`. Onde a primeria define controladores RestFull. <br>
 
-1. Create a visualization of the Spring Boot layers (UML diagram or similar), displaying the key
+2. Create a visualization of the Spring Boot layers (UML diagram or similar), displaying the key
 abstractions in the solution of 3.3, in particular: entities, repositories, services and REST controllers.
 Describe the role of the elements modeled in the diagram. <br>
 
 3. Explain the annotations @Table, @Colum, @Id found in the Employee entity. <br>
 
+    **Resposta**: 
+    A tabela onde cada entidade serà guardada é definida através da anotação `@Table`. O nome da tabela é definido através do atributo `name` da anotação. (`@Table(name=<tableName>)`)<br>
+
+    A anotação `@Column` é utilizada para definir o nome da coluna na tabela. (`@Column(name=<columnName>)`), ou seja, onde cada atributo da entidade vai ser mapeado, na tabela.<br>
+
+    O atributo que representa a chave primária é identificado através da anotação `@Id`, e nos casos dados foi gerada automaticamente com `@GenerateValue`, onde pode ser especificado a estratégia de geração. <br>
+
+
+
 4. Explain the use of the annotation @AutoWired (in the Rest Controller class).<br>
+    **Resposta**: A anotação `@AutoWired` é utilizada para injetar dependências. No caso do controlador, é utilizado para injetar o repositório, que é uma dependência do controlador. <br>
    
-
-
-@utowired para idzer ao spring boot que para e instancia 
 

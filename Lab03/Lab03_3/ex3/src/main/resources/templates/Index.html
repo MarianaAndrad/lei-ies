@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+    <h1>Home</h1>
+
+    <p>Hi, this is the home page. <a href="/">   Home </a></p>
+    <br>
+    <div>
+        <h5>GET</h5>
+        <p> http://localhost:8080/api/shows <a href="/api/shows">   Get List Shows</a> </p>
+        <br>
+        <p> http://localhost:8080/api/quotes    <a href="/api/quotes">  Get List Quotes</a></p>
+        <br>
+        <p> http://localhost:8080/api/quote/{{id}}  <a href="/api/quote/1">    Get Quote by ID</a></p>
+        <br>
+        <p> http://localhost:8080/api/show/{{id}}   <a href="/api/show/37">  Get Show by ID</a></p>
+        <br>
+        <p>http://localhost:8080/api/quote   <a href="/api/quote/">     Get random Quote</a></p>
+        <br>
+        <p>http://localhost:8080/api/quote?id={{showid}}     <a href="/api/quote">    Get random Quote By id the Show</a> </p>
+        <br>
+        <br>
+        <h5>POST</h5>
+        <p>http://localhost:8080/api/addshow    <a href="/api/addshow"> Adicionar Show</a></p>
+        <br>
+        <p>http://localhost:8080/api/addshow    <a href="/api/addshows">    Adicionar Lista de Show</a></p>
+        <br>
+        <p>http://localhost:8080/api/addquote   <a href="/api/addquote">    Adicionar Quote</a></p>
+        <br>
+        <br>
+        <h5>PUT</h5>
+        <p>http://localhost:8080/api/updatequote/{{id}}     <a href="/api/updatequote/1">   Update Quote</a></p>
+        <br>
+        <p> http://localhost:8080/api/updateshow/{{id}}     <a href="/api/updateshow/1"> Update Show</a></p>
+        <br>
+        <br>
+        <h5>DELETE</h5>
+        <p>http://localhost:8080/api/deletequote/{{id}}     <a href="/api/deletequote/1">   Delete Quote</a></p>
+        <br>
+        <p>http://localhost:8080/api/deleteshow/{{id}}  <a href="/api/deleteshow/1">    Delete Show</a></p>
+        <br>
+        <p>http://localhost:8080/api/delete     <a href="/api/delete">  Delete todos os shows e qoutes</a></p>
+        <br>
+        <p>http://localhost:8080/api/deleteallquotes    <a href="/api/deleteallquotes"> Delete all Quotes</a></p>
+    </div>
+</body>
+</html>
