@@ -460,18 +460,42 @@ partes deste laboratório. <br>
 abstractions in the solution of 3.3, in particular: entities, repositories, services and REST controllers.
 Describe the role of the elements modeled in the diagram. <br>
 
-3. Explain the annotations @Table, @Colum, @Id found in the Employee entity. <br>
+    ![Diagrama](/Lab03_3/Ex3Application.png)
+    **Resposta**:
+    As entidades neste caso são as classes `Quote` e `Show`. Estas são classes que representam as tabelas da base de dados. Estes tem uma relação de **oneToMany**, onde um show pode ter várias quotes. 
+
+   - `Show` - Entidade que representa uma série ou movie, com os atributos `id`, `source`, `type`, List<Quote> `quotes`.
+   - `Quote` - Entidade que representa uma citação, com os atributos `id`, `quote`, `author`, `show`. <br><br>
+  
+    Os repositórios são interfaces que estendem a interface `JpaRepository` e que permitem a comunicação com a base de dados. Estas interfaces são implementadas automaticamente pela `Spring Data JPA`. No exercicio 3.3 foram criados dois repositórios, um para cada entidade. <br>
+    - `ShowRepository` - Interface que extende `JpaRepository` e permite a gestão de entidades `Show` na base de dados.
+    - `QuoteRepository` - Interface que extende `JpaRepository` e permite a gestão de entidades `Quote` na base de dados.
+  
+    <br>
+    Os serviços são classes que implementam a lógica de negócio da aplicação. Estas classes são utilizadas pelos controladores REST para obter os dados necessários para responder aos pedidos HTTP. Nestes laboratórios foram criados um serviço para as duas entidades. <br>
+    - `ApiService` - Classe que implementa a lógica de negócio da entidade `Show` e `Quote`.
+  
+    <br>
+    E por fim os controladores REST são classes que implementam os métodos que respondem aos pedidos HTTP. Estas classes são anotadas com `@RestController` e os métodos com `@RequestMapping`. <br>
+    - `ApiController` - Classe que implementa os métodos que respondem aos pedidos HTTP para a entidade `Show` e `Quote`.
+
+    Como página inicial, foi criado um método que retorna uma página HTML com um link para a documentação da API. <br>
+    - `IndexController` - Classe que implementa o método que retorna a página inicial da aplicação.
+    - `index.html` - Ficheiro HTML que contém a página inicial da aplicação.<br><br>
+
+
+1. Explain the annotations @Table, @Colum, @Id found in the Employee entity. <br>
 
     **Resposta**: 
     A tabela onde cada entidade serà guardada é definida através da anotação `@Table`. O nome da tabela é definido através do atributo `name` da anotação. (`@Table(name=<tableName>)`)<br>
 
     A anotação `@Column` é utilizada para definir o nome da coluna na tabela. (`@Column(name=<columnName>)`), ou seja, onde cada atributo da entidade vai ser mapeado, na tabela.<br>
 
-    O atributo que representa a chave primária é identificado através da anotação `@Id`, e nos casos dados foi gerada automaticamente com `@GenerateValue`, onde pode ser especificado a estratégia de geração. <br>
+    O atributo que representa a chave primária é identificado através da anotação `@Id`, e nos casos dados foi gerada automaticamente com `@GenerateValue`, onde pode ser especificado a estratégia de geração. <br><br>
 
 
 
-4. Explain the use of the annotation @AutoWired (in the Rest Controller class).<br>
+2. Explain the use of the annotation @AutoWired (in the Rest Controller class).<br>
     **Resposta**: A anotação `@AutoWired` é utilizada para injetar dependências. No caso do controlador, é utilizado para injetar o repositório, que é uma dependência do controlador. <br>
    
 

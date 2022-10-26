@@ -1,0 +1,454 @@
+[
+      {
+            "source": "Avatar the Last Airbender",
+            "type": "tv"
+      },
+      {
+            "source": "Person Of Interest",
+            "type": "tv"
+      },
+      {
+            "source": "Matrix",
+            "type": "movie"
+      },
+      {
+            "source": "Gone With the Wind",
+            "type": "movie"
+      },
+      {
+            "source": "Always Sunny in Philadelphia",
+            "type": "tv"
+      },
+      {
+            "source": "Mr. Robot",
+            "type": "tv"
+      },
+      {
+            "source": "The IT Crowd",
+            "type": "tv"
+      },
+      {
+            "source": "The Prestige",
+            "type": "movie"
+      },
+      {
+            "source": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+            "type": "tv"
+      },
+      {
+            "source": "Game of Thrones",
+            "type": "tv"
+      },
+      {
+            "source": "Creator",
+            "type": "movie"
+      },
+      {
+            "source": "Archer",
+            "type": "tv"
+      },
+      {
+            "source": "The Dark Knight Rises",
+            "type": "movie"
+      },
+      {
+            "source": "Rick and Morty",
+            "type": "tv"
+      },
+      {
+            "source": "Dexter",
+            "type": "tv"
+      },
+      {
+            "source": "Fight Club",
+            "type": "movie"
+      },
+      {
+            "source": "Taken",
+            "type": "movie"
+      },
+      {
+            "source": "Kingsman: Secret Service",
+            "type": "movie"
+      },
+      {
+            "source": "Into The Wild",
+            "type": "movie"
+      },
+      {
+            "source": "X-Men: Days of Future Past",
+            "type": "movie"
+      },
+      {
+            "source": "Titanic",
+            "type": "movie"
+      },
+      {
+            "source": "Red Dwarf",
+            "type": "tv"
+      },
+      {
+            "source": "Zoolander",
+            "type": "movie"
+      },
+      {
+            "source": "Westworld",
+            "type": "tv"
+      },
+      {
+            "source": "Grey's Anatomy",
+            "type": "tv"
+      },
+      {
+            "source": "Dark Knight Rises",
+            "type": "movie"
+      },
+      {
+            "source": "Raising Arizona",
+            "type": "movie"
+      },
+      {
+            "source": "Glengarry Glen Ross",
+            "type": "movie"
+      },
+      {
+            "source": "The Dark Knight",
+            "type": "movie"
+      },
+      {
+            "source": "Avengers: Infinity War",
+            "type": "movie"
+      },
+      {
+            "source": "Iron Man",
+            "type": "movie"
+      },
+      {
+            "source": "Love Story (1970)",
+            "type": "movie"
+      },
+      {
+            "source": "Thor: Ragnarok",
+            "type": "movie"
+      },
+      {
+            "source": "To Kill a Mockingbird",
+            "type": "movie"
+      },
+      {
+            "source": "Vanilla Sky",
+            "type": "movie"
+      },
+      {
+            "source": "Acid",
+            "type": "movie"
+      },
+      {
+            "source": "The Wolf of Wall Street",
+            "type": "movie"
+      },
+      {
+            "source": "M*A*S*H",
+            "type": "tv"
+      },
+      {
+            "source": "The Green Mile",
+            "type": "movie"
+      },
+      {
+            "source": "Young Frankenstein",
+            "type": "movie"
+      },
+      {
+            "source": "A Bit of Fry & Laurie",
+            "type": "tv"
+      },
+      {
+            "source": "Forrest Gump",
+            "type": "movie"
+      },
+      {
+            "source": "Iron Man 3",
+            "type": "movie"
+      },
+      {
+            "source": "The Godfather",
+            "type": "movie"
+      },
+      {
+            "source": "The Shawshank Redemption",
+            "type": "movie"
+      },
+      {
+            "source": "Pacific Rim",
+            "type": "movie"
+      },
+      {
+            "source": "The Avengers",
+            "type": "movie"
+      },
+      {
+            "source": "Futurama",
+            "type": "tv"
+      },
+      {
+            "source": "Tokyo Ghoul",
+            "type": "tv"
+      },
+      {
+            "source": "Star Wars Episode V: The Empire Strikes Back",
+            "type": "movie"
+      },
+      {
+            "source": "Braveheart",
+            "type": "movie"
+      },
+      {
+            "source": "Scarface",
+            "type": "movie"
+      },
+      {
+            "source": "Kill Bill: Vol.1",
+            "type": "movie"
+      },
+      {
+            "source": "Dr. Strangelove",
+            "type": "movie"
+      },
+      {
+            "source": "Naruto",
+            "type": "tv"
+      },
+      {
+            "source": "Watchmen",
+            "type": "movie"
+      },
+      {
+            "source": "Avengers: Endgame",
+            "type": "movie"
+      },
+      {
+            "source": "As Good as It Gets",
+            "type": "movie"
+      },
+      {
+            "source": "Supernatural",
+            "type": "tv"
+      },
+      {
+            "source": "The Big Bang Theory",
+            "type": "tv"
+      },
+      {
+            "source": "League of Legends",
+            "type": "games"
+      },
+      {
+            "source": "Star Wars. The Empire Strikes Back",
+            "type": "movie"
+      },
+      {
+            "source": "The flintstones",
+            "type": "tv"
+      },
+      {
+            "source": "Coach Carter",
+            "type": "movie"
+      },
+      {
+            "source": "Chernobyl",
+            "type": "tv"
+      },
+      {
+            "source": "Silicon Valley",
+            "type": "tv"
+      },
+      {
+            "source": "Harry Potter and the Order of the Phoenix",
+            "type": "movie"
+      },
+      {
+            "source": "Harry Potter and the Goblet of Fire",
+            "type": "movie"
+      },
+      {
+            "source": "Kung fu Panda",
+            "type": "movie"
+      },
+      {
+            "source": "Pursuit of Happyness",
+            "type": "movie"
+      },
+      {
+            "source": "The Big Lebowski",
+            "type": "movie"
+      },
+      {
+            "source": "The Great Gatsby",
+            "type": "movie"
+      },
+      {
+            "source": "The Godfather Part II",
+            "type": "movie"
+      },
+      {
+            "source": "Star Wars",
+            "type": "movie"
+      },
+      {
+            "source": "The Hobbit",
+            "type": "movie"
+      },
+      {
+            "source": "Avengers infinity war",
+            "type": "movie"
+      },
+      {
+            "source": "the social network",
+            "type": "movie"
+      },
+      {
+            "source": "Anarchy",
+            "type": "movie"
+      },
+      {
+            "source": "The Fall",
+            "type": "movie"
+      },
+      {
+            "source": "The Mists of Avalon",
+            "type": "movie"
+      },
+      {
+            "source": "12 Monkeys",
+            "type": "tv"
+      },
+      {
+            "source": "Point Break",
+            "type": "tv"
+      },
+      {
+            "source": "F is for Family",
+            "type": "tv"
+      },
+      {
+            "source": "Parks and Recreation",
+            "type": "tv"
+      },
+      {
+            "source": "The Simpsons",
+            "type": "tv"
+      },
+      {
+            "source": "Big Hero 6",
+            "type": "tv"
+      },
+      {
+            "source": "The Marvelous Mrs. Maisel",
+            "type": "tv"
+      },
+      {
+            "source": "JoJo's Bizarre Adventure: Stardust Crusaders",
+            "type": "tv"
+      },
+      {
+            "source": "The Curious Case of Benjamin Button",
+            "type": "movie"
+      },
+      {
+            "source": "Haikyuu",
+            "type": "tv"
+      },
+      {
+            "source": "Breaking Bad",
+            "type": "tv"
+      },
+      {
+            "source": "Harry Potter and the Prisoner of Azkaban",
+            "type": "movie"
+      },
+      {
+            "source": "Hunt for the Wilderpeople",
+            "type": "movie"
+      },
+      {
+            "source": "The Fresh Prince of Bel-Air",
+            "type": "tv"
+      },
+      {
+            "source": "Gavin and Stacey",
+            "type": "tv"
+      },
+      {
+            "source": "RuPaul's Drag Race",
+            "type": "tv"
+      },
+      {
+            "source": "Family Guy",
+            "type": "tv"
+      },
+      {
+            "source": "The Imitation Game",
+            "type": "movie"
+      },
+      {
+            "source": "Finding Nemo",
+            "type": "movie"
+      },
+      {
+            "source": "Dau",
+            "type": "movie"
+      },
+      {
+            "source": "The Office",
+            "type": "tv"
+      },
+      {
+            "source": "Love, Rosie",
+            "type": "movie"
+      },
+      {
+            "source": "The Umbrella Academy",
+            "type": "tv"
+      },
+      {
+            "source": "The Handmaids Tale",
+            "type": "tv"
+      },
+      {
+            "source": "Squid Game",
+            "type": "tv"
+      },
+      {
+            "source": "Maid",
+            "type": "tv"
+      },
+      {
+            "source": "The Matrix",
+            "type": "movie"
+      },
+      {
+            "source": "The Matrix Revolutions",
+            "type": "movie"
+      },
+      {
+            "source": "Pirates of the Caribbean",
+            "type": "movie"
+      },
+      {
+            "source": "Black Sails",
+            "type": "tv"
+      },
+      {
+            "source": "Luca",
+            "type": "movie"
+      },
+      {
+            "source": "Tinker Tailor Soldier Spy",
+            "type": "movie"
+      },
+      {
+            "source": "Snowpiercer",
+            "type": "tv"
+      }
+]

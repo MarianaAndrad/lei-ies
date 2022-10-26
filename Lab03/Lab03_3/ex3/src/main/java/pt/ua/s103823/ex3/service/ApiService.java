@@ -121,15 +121,14 @@ public class ApiService {
 
     // devolve um quote aleatório
     public Quote getRandomQuote() {
-        //gerar um número aleatório
-        long random = (long) (Math.random() * quoteRepository.count());
-        //devolver o quote com esse id
-        return quoteRepository.findById(random).get();
+        List<Quote> quotes = quoteRepository.findAll();
+        int random = (int) (Math.random() * quotes.size());
+        return quotes.get(random);
     }
 
     public Quote getRandomQuote(long idShow) {
+
         //ir buscar o show
-        Show show = showRepository.findById(idShow).get();
         List<Quote> quotes = quoteRepository.findAll();
         List<Quote> quoteByShow = new ArrayList<>();
         for (Quote quote : quotes) {
@@ -137,11 +136,10 @@ public class ApiService {
                 quoteByShow.add(quote);
             }
         }
-
         //gerar um número aleatório
-        long random = (long) (Math.random() * quoteByShow.size());
+        int random = (int) (Math.random() * quoteByShow.size());
         //devolver o quote com esse id
-        return quoteByShow.get((int) random);
+        return quoteByShow.get(random);
     }
 
     public Show getShowById(Long showId) {

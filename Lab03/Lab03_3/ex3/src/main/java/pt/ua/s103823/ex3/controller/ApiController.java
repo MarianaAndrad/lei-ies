@@ -78,12 +78,11 @@ public class ApiController {
 
     //Get Quote random
     @GetMapping("/api/quote")
-    public Quote getRandomQuote(@RequestParam(value = "id", required = false) long idShow) throws ResourceNotFoundException {
-        if(idShow == 0) {
-            return apiService.getRandomQuote();
-        } else {
-            return apiService.getRandomQuote(idShow);
+    public Quote getRandomQuote(@RequestParam(value = "id", required = false) String idShow) throws ResourceNotFoundException {
+        if(idShow != null){
+            return apiService.getRandomQuote(Long.parseLong(idShow));
         }
+        return apiService.getRandomQuote();
     }
 
     //Get Quote by id
