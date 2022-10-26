@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9fa8118-67ac-4359-be36-7ad24d0829e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../dados/extrair.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dados/info.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dados/movies.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../dados/quotes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/Ex3Application.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Lab01/Lab1.2/MyWeatherRadar/target/classes/pt/ua/deti/CityForecast.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Lab01/Lab1.2/MyWeatherRadar/target/classes/pt/ua/deti/CityForecast.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Lab01/Lab1.2/MyWeatherRadar/target/classes/pt/ua/deti/IpmaCityForecast.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Lab01/Lab1.2/MyWeatherRadar/target/classes/pt/ua/deti/IpmaCityForecast.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Lab01/Lab1.2/MyWeatherRadar/target/classes/pt/ua/deti/WeatherStarter.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Lab01/Lab1.2/MyWeatherRadar/target/classes/pt/ua/deti/WeatherStarter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Lab02/Lab02_4/demo/src/main/java/pt/ua/ies/s10323/demo/User.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Lab02/Lab02_4/demo/src/main/java/pt/ua/ies/s10323/demo/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dockerfile.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/controller/ApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/service/ApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pt/ua/s103823/ex3/service/ApiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/Index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/Index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,22 +58,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/mariana/Universidade/Lei-IES/IES_103823/Lab03/Lab03_3/ex3/src/main/java/pt/ua/s103823/ex3/repository",
-    "settings.editor.selected.configurable": "Lombok",
-    "spring.configuration.checksum": "4909e630b11722599843499bf0509302"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mariana/Universidade/Lei-IES/IES_103823/Lab03/Lab03_3/ex3/src/main/java/pt/ua/s103823/ex3/repository&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Lombok&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;4909e630b11722599843499bf0509302&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="pt.ua.s103823.ex3.model" />
@@ -134,7 +128,9 @@
       <workItem from="1666791151968" duration="1228000" />
       <workItem from="1666792726788" duration="6279000" />
       <workItem from="1666799356691" duration="1444000" />
-      <workItem from="1666803254028" duration="3120000" />
+      <workItem from="1666803254028" duration="3789000" />
+      <workItem from="1666814117914" duration="75000" />
+      <workItem from="1666816963702" duration="52000" />
     </task>
     <servers />
   </component>

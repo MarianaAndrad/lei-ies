@@ -1,0 +1,4 @@
+FROM eclipse-temurin:17-jdk-alpine
+VOLUME /tmp
+COPY target/*.jar app.jar
+ENTRYPOINT ["java","-jar", "-Dspring.datasource.url=jdbc:mysql://${APP_DB}:3306/demo","/app.jar"]
